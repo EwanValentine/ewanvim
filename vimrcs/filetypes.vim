@@ -22,7 +22,7 @@ au FileType python map <buffer> <leader>D ?def
 """"""""""""""""""""""""""""""
 " => JavaScript section
 """""""""""""""""""""""""""""""
-au FileType javascript call JavaScriptFold()
+" au FileType javascript call JavaScriptFold()
 au FileType javascript setl fen
 au FileType javascript setl nocindent
 
@@ -32,25 +32,20 @@ au FileType javascript imap <c-a> alert();<esc>hi
 au FileType javascript inoremap <buffer> $r return 
 au FileType javascript inoremap <buffer> $f //--- PH ----------------------------------------------<esc>FP2xi
 
-function! JavaScriptFold() 
-    setl foldmethod=syntax
-    setl foldlevelstart=1
-    syn region foldBraces start=/{/ end=/}/ transparent fold keepend extend
-
-    function! FoldText()
-        return substitute(getline(v:foldstart), '{.*', '{...}', '')
-    endfunction
-    setl foldtext=FoldText()
-endfunction
+au FileType gitcommit call setpos('.', [0, 1, 1, 0])
 
 
 """"""""""""""""""""""""""""""
-" => CoffeeScript section
+" => Mardown section
 """""""""""""""""""""""""""""""
-function! CoffeeScriptFold()
-    setl foldmethod=indent
-    setl foldlevelstart=1
-endfunction
-au FileType coffee call CoffeeScriptFold()
+au! BufRead,BufNewFile *.markdown set filetype=mkd
+au! BufRead,BufNewFile *.md       set filetype=mkd
 
-au FileType gitcommit call setpos('.', [0, 1, 1, 0])
+au FileType mkd setlocal autoindent
+au FileType mkd setlocal colorcolumn=0
+au FileType mkd setlocal linebreak
+au FileType mkd setlocal nonumber
+au FileType mkd setlocal shiftwidth=4
+au FileType mkd setlocal spell
+au FileType mkd setlocal tabstop=4
+au FileType mkd setlocal wrap
