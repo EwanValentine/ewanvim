@@ -1,4 +1,4 @@
-colorscheme molokai 
+colorscheme anderson 
 
 inoremap jj <ESC>
 let mapleader = ","
