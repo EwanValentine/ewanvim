@@ -1,4 +1,4 @@
-colorscheme hybrid_reverse
+colorscheme molokai 
 
 inoremap jj <ESC>
 let mapleader = ","
