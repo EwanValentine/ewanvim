@@ -12,12 +12,11 @@ autocmd Filetype ruby setlocal ts=2 sts=2 sw=2
 autocmd Filetype javascript setlocal ts=2 sts=2 sw=2
 autocmd Filetype php setlocal ts=4 sts=4 sw=4
 
-let g:snipMate={}
-let g:snipMate.snippet_dirs = ["~/.vim_runtime/sources_non_forked/snipmate-snippets/"]
+imap <Tab><Tab> <esc>a<Plug>snipMateNextOrTrigger
 
-let g:UltiSnipsExpandTrigger="ss"
-let g:UltiSnipsJumpForwardTrigger="<c-b>"
-let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+"" let g:UltiSnipsExpandTrigger="ss"
+"" let g:UltiSnipsJumpForwardTrigger="<c-b>"
+"" let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 
 set number
 set nohlsearch
