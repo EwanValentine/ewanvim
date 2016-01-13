@@ -1,4 +1,4 @@
-colorscheme anderson 
+colorscheme hybrid_reverse
 
 inoremap jj <ESC>
 let mapleader = ","
@@ -20,10 +20,12 @@ imap <Tab><Tab> <esc>a<Plug>snipMateNextOrTrigger
 
 set number
 set nohlsearch
-let g:airline_theme='PaperColor'
+let g:airline_theme='hybrid'
 let g:airline#extensions#tabline#enabled = 1
 let g:ycm_semantic_triggers = {}
 let g:ycm_semantic_triggers.php =
             \ ['->', '::', '(', 'use ', 'namespace ', '\']
+
+let g:jsx_ext_required = 0
 
 call padawan#StartServer()
