@@ -1,4 +1,6 @@
-colorscheme hybrid_reverse
+syntax enable
+set number
+colorscheme lucario
 
 inoremap jj <ESC>
 let mapleader = ","
@@ -14,16 +16,14 @@ autocmd Filetype php setlocal ts=4 sts=4 sw=4
 
 imap <Tab><Tab> <esc>a<Plug>snipMateNextOrTrigger
 
-"" let g:UltiSnipsExpandTrigger="ss"
-"" let g:UltiSnipsJumpForwardTrigger="<c-b>"
-"" let g:UltiSnipsJumpBackwardTrigger="<c-z>"
-
-set number
 set nohlsearch
-let g:airline_theme='hybrid'
+let g:onedark_termcolors = 256
+let g:airline_theme='onedark'
 let g:airline#extensions#tabline#enabled = 1
 let g:ycm_semantic_triggers = {}
 let g:ycm_semantic_triggers.php =
             \ ['->', '::', '(', 'use ', 'namespace ', '\']
+
+let g:jsx_ext_required = 0
 
 call padawan#StartServer()
