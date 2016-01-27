@@ -14,7 +14,7 @@ autocmd Filetype ruby setlocal ts=2 sts=2 sw=2
 autocmd Filetype javascript setlocal ts=2 sts=2 sw=2
 autocmd Filetype php setlocal ts=4 sts=4 sw=4
 
-imap <Tab><Tab> <esc>a<Plug>snipMateNextOrTrigger
+imap qq <esc>a<Plug>snipMateNextOrTrigger
 
 set nohlsearch
 let g:onedark_termcolors = 256
@@ -25,5 +25,4 @@ let g:ycm_semantic_triggers.php =
             \ ['->', '::', '(', 'use ', 'namespace ', '\']
 
 let g:jsx_ext_required = 0
-
-call padawan#StartServer()
+let g:user_emmet_leader_key='aa'
