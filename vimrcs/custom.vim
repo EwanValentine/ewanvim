@@ -1,7 +1,8 @@
 set number
 syntax on
 set background=dark
-colorscheme mod8
+let g:sierra_Campfire = 1
+colorscheme sierra
 
 inoremap jj <ESC>
 let mapleader = ","
