@@ -1,6 +1,7 @@
-syntax enable
 set number
-colorscheme lucario
+syntax on
+set background=dark
+colorscheme mod8
 
 inoremap jj <ESC>
 let mapleader = ","
@@ -18,8 +19,8 @@ imap qq <esc>a<Plug>snipMateNextOrTrigger
 
 set nohlsearch
 let g:onedark_termcolors = 256
-let g:airline_theme='onedark'
 let g:airline#extensions#tabline#enabled = 1
+let g:airline_theme='onedark'
 let g:ycm_semantic_triggers = {}
 let g:ycm_semantic_triggers.php =
             \ ['->', '::', '(', 'use ', 'namespace ', '\']
