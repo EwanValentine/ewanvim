@@ -118,19 +118,14 @@ nnoremap <silent> <leader>z :Goyo<cr>
 let g:syntastic_python_checkers=['pyflakes']
 let g:syntastic_javascript_checkers = ['jshint']
 
-" Custom CoffeeScript SyntasticCheck
-func! SyntasticCheckCoffeescript()
-    let l:filename = substitute(expand("%:p"), '\(\w\+\)\.coffee', '.coffee.\1.js', '')
-    execute "e " . l:filename
-    execute "SyntasticCheck"
-    execute "Errors"
-endfunc
-nnoremap <silent> <leader>l :call SyntasticCheckCoffeescript()<cr>
-
-
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Git gutter (Git diff)
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:gitgutter_enabled=0
 nnoremap <silent> <leader>d :GitGutterToggle<cr>
 
+" JS Lint
+set makeprg=jslint\ %
+set errorformat=%-P%f,
+        \%E%>\ #%n\ %m,%Z%.%#Line\ %l\\,\ Pos\ %c,
+        \%-G%f\ is\ OK.,%-Q
