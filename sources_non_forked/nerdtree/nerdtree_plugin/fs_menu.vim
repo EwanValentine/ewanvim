@@ -2,7 +2,6 @@
 " File:        fs_menu.vim
 " Description: plugin for the NERD Tree that provides a file system menu
 " Maintainer:  Martin Grenfell <martin.grenfell at gmail dot com>
-" Last Change: 17 July, 2009
 " License:     This program is free software. It comes without any warranty,
 "              to the extent permitted by applicable law. You can redistribute
 "              it and/or modify it under the terms of the Do What The Fuck You
@@ -106,11 +105,11 @@ function! NERDTreeAddNode()
 
     try
         let newPath = g:NERDTreePath.Create(newNodeName)
-        let parentNode = b:NERDTreeRoot.findNode(newPath.getParent())
+        let parentNode = b:NERDTree.root.findNode(newPath.getParent())
 
-        let newTreeNode = g:NERDTreeFileNode.New(newPath)
+        let newTreeNode = g:NERDTreeFileNode.New(newPath, b:NERDTree)
         if empty(parentNode)
-            call b:NERDTreeRoot.refresh()
+            call b:NERDTree.root.refresh()
             call b:NERDTree.render()
         elseif parentNode.isOpen || !empty(parentNode.children)
             call parentNode.addChild(newTreeNode, 1)
@@ -246,7 +245,7 @@ function! NERDTreeCopyNode()
             try
                 let newNode = currentNode.copy(newNodePath)
                 if empty(newNode)
-                    call b:NERDTreeRoot.refresh()
+                    call b:NERDTree.root.refresh()
                     call b:NERDTree.render()
                 else
                     call NERDTreeRender()
